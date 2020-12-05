@@ -207,5 +207,7 @@ class AwardInterpretation:
         award['units'] = round((finish - start) / 60 / 60, 4)
         hour_cost = random.randrange(100, 200, 1) / 10
         award['cost'] = award['units'] * hour_cost
+        award['from'] = start
+        award['to'] = finish
 
         return award
