@@ -1,10 +1,11 @@
+import os
 from urllib.parse import urljoin
 
 import requests
 
 
 class Extractor:
-    API_URL = 'http://localhost:5000'
+    API_URL = os.getenv('SHIFTS-API-URL')
 
     def extract_all_users(self):
         response = requests.get(urljoin(self.API_URL, 'users'))

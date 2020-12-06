@@ -1,3 +1,4 @@
+import os
 from typing import List
 
 from pymongo import MongoClient
@@ -12,7 +13,7 @@ class Loader:
 
     @staticmethod
     def get_db():
-        client = MongoClient()
+        client = MongoClient(os.getenv('MONGO-URI'))
         return client.shifts
 
     def load_into_db(self, shift_entries: List[ShiftEntry]):

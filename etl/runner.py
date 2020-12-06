@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 from etl.extractor import Extractor
 from etl.transformer import Transformer
 from etl.loader import Loader
